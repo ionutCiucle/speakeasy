@@ -9,12 +9,22 @@ import { withStyles } from '@material-ui/core/styles';
 
 function Header({ classes }) {
   return (
-    <AppBar color="primary">
+    <AppBar
+      color="primary"
+      position="relative"
+    >
       <Toolbar className={classes.toolbar}>
         <div className={classes.title}>
-          <FlighLandIcon color="secondary" className={classes.icon}/>
-          <Typography variant="title" className={classes.title} color="secondary">
-            Speakeasy
+          <FlighLandIcon
+            color="secondary"
+            className={classes.icon}
+          />
+          <Typography
+            variant="title"
+            className={classes.title}
+            color="secondary"
+          >
+          Speakeasy
           </Typography>
         </div>
         <Button color="secondary">

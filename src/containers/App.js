@@ -3,13 +3,13 @@ import { withStyles, MuiThemeProvider } from '@material-ui/core/styles';
 import Header from '../components/Header';
 import { speakeasyTheme } from '../styling/theme';
 
-function App({ classes }) {
+function App({ classes, children }) {
   return (
     <div className={classes.app}>
       <MuiThemeProvider theme={speakeasyTheme}>
-        <Header/>
+        <Header/> 
         <main className={classes.main}>
-          Here will lie all of speakeasy
+          {children}
         </main>
       </MuiThemeProvider>
     </div>
@@ -27,7 +27,8 @@ const styles = {
   },
   main: {
     flex: 1,
-    width: '100%'
+    width: '100%',
+    padding: 10
   }
 };
 
