@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from '../components/Header';
 import { withStyles, MuiThemeProvider } from '@material-ui/core/styles';
-import { speakeasyTheme } from '../theme';
+import Header from '../components/Header';
+import { speakeasyTheme } from '../styling/theme';
 
 function App({ classes }) {
   return (
