@@ -1,35 +1,60 @@
 import React from 'react';
 import SessionCard from '../components/SessionCard';
+import { withStyles } from '@material-ui/core/styles';
 
-export default class PreviousSession extends React.PureComponent {
+class PreviousSessions extends React.PureComponent {
   constructor() {
     super();
     this.state = {
       sessions: [
         { id: 1, time: '3 hours', cost: '70 lei', drinks: 3 },
         { id: 2, time: '12 hours', cost: '170 lei', drinks: 20 },
-        { id: 3, time: '1 hour', cost: '10 lei', drinks: 1 }
+        { id: 3, time: '1 hour', cost: '10 lei', drinks: 1 },
+        { id: 4, time: '3 hours', cost: '70 lei', drinks: 3 },
+        { id: 5, time: '12 hours', cost: '170 lei', drinks: 20 },
+        { id: 6, time: '1 hour', cost: '10 lei', drinks: 1 }
       ]
     };
   }
 
   renderSessionCards() {
+    const { classes } = this.props;
     return this.state.sessions.map(({ id, time, cost, drinks }) => (
-      <SessionCard
+      <li
         key={id}
-        id={id}  
-        time={time}
-        cost={cost}
-        drinks={drinks}
-      />
+        className={classes.sessionCard}
+      >
+        <SessionCard
+          id={id}  
+          time={time}
+          cost={cost}
+          drinks={drinks}
+        />
+      </li>
     ));
   }
 
   render() {
+    const { classes } = this.props;
     return (
-      <section>
-        {this.renderSessionCards()}
-      </section>
+      <ul className={classes.previousSessions}>{this.renderSessionCards()}</ul>
     );
   }
 }
+
+const styles = {
+  previousSessions: {
+    listStyle: 'none',
+    padding: 0,
+    margin: 0,
+    height: '100%'
+  },
+  sessionCard: {
+    marginBottom: 10,
+    ':last-child': {
+      marginBottom: 0
+    }
+  }
+};
+
+export default withStyles(styles)(PreviousSessions);

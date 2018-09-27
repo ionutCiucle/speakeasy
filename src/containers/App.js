@@ -2,6 +2,7 @@ import React from 'react';
 import { withStyles, MuiThemeProvider } from '@material-ui/core/styles';
 import Header from '../components/Header';
 import { speakeasyTheme } from '../styling/theme';
+import { lightGray } from '../styling/colors';
 
 function App({ classes, children }) {
   return (
@@ -23,12 +24,14 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: lightGray
   },
   main: {
     flex: 1,
     width: '100%',
-    padding: 10
+    padding: 10,
+    overflow: 'auto'
   }
 };
 
