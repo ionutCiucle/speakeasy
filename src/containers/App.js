@@ -1,5 +1,7 @@
 import React from 'react';
 import { withStyles, MuiThemeProvider } from '@material-ui/core/styles';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
 import Header from '../components/Header';
 import AddNewSessionModal from './modals/AddNewSessionModal';
 import { speakeasyTheme } from '../styling/theme';
@@ -12,17 +14,14 @@ class App extends React.PureComponent {
       showModal: false
     };
   }
-    
-  toggleModalVisibility(show) {
-    this.setState({ showModal: !!show });
-  }
 
+  // move the modal visiblity property in a layout reducer
   getToggleModalVisibilityHandler = (show) => () => {
     this.setState({ showModal: !!show });
   }
 
   render() {
-    const { classes, children } = this.props;
+    const { classes, children, sessionInProgress } = this.props;
     const { showModal } = this.state;
 
     return (
@@ -30,10 +29,12 @@ class App extends React.PureComponent {
         <MuiThemeProvider theme={speakeasyTheme}>
           <AddNewSessionModal
             open={showModal}
-            onConfirm={this.getToggleModalVisibilityHandler(false)}
-            onCancel={this.getToggleModalVisibilityHandler(false)}
+            onClose={this.getToggleModalVisibilityHandler(false)}
           />
-          <Header onStartSession={this.getToggleModalVisibilityHandler(true)}/> 
+          <Header
+            sessionInProgress={sessionInProgress} 
+            onStartSession={this.getToggleModalVisibilityHandler(true)}
+          /> 
           <main className={classes.main}>
             {children}
           </main>
@@ -60,4 +61,13 @@ const styles = {
   }
 };
 
-export default withStyles(styles)(App);
+function mapStateToProps(state) {
+  return {
+    sessionInProgress: state.session.currentSession !== null
+  };
+}
+
+export default compose(
+  connect(mapStateToProps, null),
+  withStyles(styles)
+)(App);

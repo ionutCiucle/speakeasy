@@ -1,5 +1,7 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import SessionFooter from '../components/SessionFooter';
@@ -16,7 +18,7 @@ class Session extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, currentSession } = this.props;
 
     return (
       <section className={classes.session}>
@@ -35,9 +37,9 @@ class Session extends React.Component {
           Here will lie our drinks
         </div>
         <SessionFooter
-          sessionName="My Session"
-          drinks={5}
-          cost="69 lei"
+          sessionName={currentSession.title}
+          drinks={currentSession.drinks}
+          cost={currentSession.cost}
         />
       </section>
     );
@@ -63,4 +65,15 @@ const styles = {
   }
 };
 
-export default withStyles(styles)(Session);
+function mapStateToProps(state) {
+  return {
+    currentSession: state.session.currentSession
+  };
+}
+
+export default compose(
+  connect(mapStateToProps),
+  withStyles(styles)
+)(Session);
+
+// export default withStyles(styles)(Session);

@@ -1,8 +1,10 @@
-import { START_SESSION } from './action-types';
+import { START_SESSION, END_SESSION } from './action-types';
 
 const initialState = {
+  sessionInProgress: false,
+  currentSession: null,
   sessions: [{
-    id: '2193820398203',
+    id: Date.now(),
     title: 'SomeTitle',
     time: '2h',
     endDate: '',
@@ -16,12 +18,27 @@ export default function sessionReducer(state = initialState, action) {
     case START_SESSION: {
       return {
         ...state,
-        sessions: state.sessions.concat([{
+        sessionInProgress: true,
+        currentSession: {
           id: Date.now(),
           title: action.title,
+          endDate: '',
           time: '',
-          cost: '',
+          cost: '0 lei',
           drinks: 0
+        }
+      };
+    }
+
+    case END_SESSION: {
+      return {
+        ...state,
+        sessionInProgress: false,
+        currentSession: null,
+        sessions: state.sessions.concat([{
+          ...state.currentSession,
+          endDate: Date.now(),
+          time: state.currentSession.endDate - state.currentSession.id
         }])
       };
     }

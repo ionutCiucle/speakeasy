@@ -6,7 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
-function Header({ classes, onStartSession }) {
+function Header({ classes, sessionInProgress, onStartSession }) {
   return (
     <AppBar
       color="primary"
@@ -26,12 +26,14 @@ function Header({ classes, onStartSession }) {
             Speakeasy
           </Typography>
         </div>
-        <Button
-          color="secondary"
-          onClick={onStartSession}
-        >
+        { !sessionInProgress ? (
+          <Button
+            color="secondary"
+            onClick={onStartSession}
+          >
           Start new session
-        </Button>
+          </Button>
+        ) : null }
       </Toolbar>
     </AppBar>
   );
