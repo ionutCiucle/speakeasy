@@ -7,31 +7,35 @@ import CartIcon from '@material-ui/icons/ShoppingCart';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import { withStyles } from '@material-ui/core/styles';
+import TextIcon from './TextIcon';
 
 function SessionCard({ title, time, cost, drinks, classes }) {
-  function renderDetail(Icon, value) {
-    return (
-      <li className={classes.cardDetail}>
-        <Icon className={classes.icon}/>
-        <Typography variant="body1">{value}</Typography>
-      </li>
-    );
-  }
-
   return ( 
     <Card> 
       <CardContent>
         <section className={classes.cardTitle}>
-          <Typography variant="headline">
+          <Typography 
+            variant="headline"
+            className={classes.text}
+          >
             {title}
           </Typography>
           <Typography variant="body1">30/01/2019</Typography>
         </section>
         <Divider/>
         <ul className={classes.cardDetails}>
-          {renderDetail(ScheduleIcon, time)}
-          {renderDetail(PaymentIcon, cost)}
-          {renderDetail(CartIcon, drinks)}
+          <TextIcon
+            iconComponent={ScheduleIcon}
+            text={time}
+          />
+          <TextIcon
+            iconComponent={PaymentIcon}
+            text={cost}
+          />
+          <TextIcon
+            iconComponent={CartIcon}
+            text={drinks}
+          />
         </ul>
       </CardContent>
     </Card>
@@ -60,6 +64,9 @@ const styles = {
   },
   icon: {
     marginRight: 5
+  },
+  text: {
+    fontWeight: 500
   }
 };
 

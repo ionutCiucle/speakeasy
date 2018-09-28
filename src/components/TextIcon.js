@@ -8,8 +8,16 @@ function TextIcon({ iconComponent, text, classes }) {
   
   return (
     <div className={classes.textIcon}>
-      <Icon className={classes.icon}/>
-      <Typography variant="body1">{text}</Typography>
+      <Icon
+        className={classes.icon}
+        color="primary"
+      />
+      <Typography
+        className={classes.text}
+        variant="body1"
+      >
+        {text}
+      </Typography>
     </div>
   );
 }
@@ -19,7 +27,10 @@ const styles = {
     ...rowFlexDisplay
   },
   icon: {
-    marginRight: 5
+    marginRight: 3
+  },
+  text: {
+    fontWeight: 500
   }
 };
 
