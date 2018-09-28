@@ -7,6 +7,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Slide from '@material-ui/core/Slide';
+import { Link } from 'react-router-dom';
 
 function SlideTransition(props) {
   return (
@@ -33,7 +34,7 @@ class AddNewSessionModal extends React.Component {
     return (
       <Dialog
         open={this.props.open}
-        onClose={this.props.onClose}
+        onClose={this.props.onCancel}
         TransitionComponent={SlideTransition}
       >
         <DialogTitle>Start your new bender</DialogTitle>
@@ -56,16 +57,16 @@ class AddNewSessionModal extends React.Component {
         </DialogContent>
         <DialogActions>
           <Button
-            onClick={this.props.onClose}
+            onClick={this.props.onCancel}
             color="primary"
           >
             Cancel
           </Button>
           <Button
-            onClick={this.props.onClose}
+            onClick={this.props.onConfirm}
             color="primary"
           >
-            Start
+            <Link to="/session">Start</Link>
           </Button>
         </DialogActions>
       </Dialog>

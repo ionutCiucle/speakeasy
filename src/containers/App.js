@@ -30,7 +30,8 @@ class App extends React.PureComponent {
         <MuiThemeProvider theme={speakeasyTheme}>
           <AddNewSessionModal
             open={showModal}
-            onClose={this.getToggleModalVisibilityHandler(false)}
+            onConfirm={this.getToggleModalVisibilityHandler(false)}
+            onCancel={this.getToggleModalVisibilityHandler(false)}
           />
           <Header onStartSession={this.getToggleModalVisibilityHandler(true)}/> 
           <main className={classes.main}>
