@@ -1,26 +1,14 @@
 import React from 'react';
 import SessionCard from '../components/SessionCard';
 import { withStyles } from '@material-ui/core/styles';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
 
 class AllSessions extends React.PureComponent {
-  constructor() {
-    super();
-    this.state = {
-      sessions: [
-        { title: 'Ziua lui Gigi Kent', id: 1, time: '3 hours', cost: '70 lei', drinks: 3 },
-        { title: 'Shadow', id: 2, time: '12 hours', cost: '170 lei', drinks: 20 },
-        { title: 'Vineri', id: 3, time: '1 hour', cost: '10 lei', drinks: 1 },
-        { title: 'Zorki', id: 4, time: '3 hours', cost: '70 lei', drinks: 3 },
-        { title: 'Botez Satana', id: 5, time: '12 hours', cost: '170 lei', drinks: 20 },
-        { title: 'Bar Mitzvah', id: 6, time: '1 hour', cost: '10 lei', drinks: 1 }
-      ]
-    };
-  }
-
   renderSessionCards() {
-    const { classes } = this.props;
+    const { classes, sessions } = this.props;
 
-    return this.state.sessions.map(({ id, title, time, cost, drinks }) => (
+    return sessions.map(({ id, title, time, cost, drinks }) => (
       <li
         key={id}
         className={classes.sessionCard}
@@ -60,4 +48,15 @@ const styles = {
   }
 };
 
-export default withStyles(styles)(AllSessions);
+function mapStateToProps(state) {
+  return {
+    sessions: state.session.sessions
+  };
+}
+
+export default compose(
+  connect(mapStateToProps, null),
+  withStyles(styles)
+)(AllSessions);
+
+// export default withStyles(styles)(AllSessions);
