@@ -8,11 +8,11 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Slide from '@material-ui/core/Slide';
 
-function Transition(props) {
+function SlideTransition(props) {
   return (
     <Slide
-      direction="down"
       {...props}
+      direction="down"
     />
   );
 }
@@ -34,7 +34,7 @@ class AddNewSessionModal extends React.Component {
       <Dialog
         open={this.props.open}
         onClose={this.props.onClose}
-        TransitionComponent={Transition}
+        TransitionComponent={SlideTransition}
       >
         <DialogTitle>Start your new bender</DialogTitle>
         <DialogContent>
