@@ -2,7 +2,7 @@ import React from 'react';
 import SessionCard from '../components/SessionCard';
 import { withStyles } from '@material-ui/core/styles';
 
-class PreviousSessions extends React.PureComponent {
+class AllSessions extends React.PureComponent {
   constructor() {
     super();
     this.state = {
@@ -38,15 +38,15 @@ class PreviousSessions extends React.PureComponent {
   render() {
     const { classes } = this.props;
     return (
-      <ul className={classes.previousSessions}>{this.renderSessionCards()}</ul>
+      <ul className={classes.allSessions}>{this.renderSessionCards()}</ul>
     );
   }
 }
 
 const styles = {
-  previousSessions: {
+  allSessions: {
+    padding: 10,
     listStyle: 'none',
-    padding: 0,
     margin: 0,
     height: '100%'
   },
@@ -58,4 +58,4 @@ const styles = {
   }
 };
 
-export default withStyles(styles)(PreviousSessions);
+export default withStyles(styles)(AllSessions);
