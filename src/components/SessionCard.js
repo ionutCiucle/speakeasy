@@ -59,7 +59,7 @@ const styles = {
     ...flexDisplay
   },
   icon: {
-    marginRight: 10
+    marginRight: 5
   }
 };
 
