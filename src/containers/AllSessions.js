@@ -45,8 +45,8 @@ class AllSessions extends React.PureComponent {
 
 const styles = {
   allSessions: {
+    padding: 10,
     listStyle: 'none',
-    padding: 0,
     margin: 0,
     height: '100%'
   },
