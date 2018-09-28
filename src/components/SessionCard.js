@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import { withStyles } from '@material-ui/core/styles';
 
-function SessionCard({ time, cost, drinks, classes }) {
+function SessionCard({ title, time, cost, drinks, classes }) {
   function renderDetail(Icon, value) {
     return (
       <li className={classes.cardDetail}>
@@ -21,11 +21,12 @@ function SessionCard({ time, cost, drinks, classes }) {
   return ( 
     <Card> 
       <CardContent>
-        <div className={classes.cardTitle}>
+        <section className={classes.cardTitle}>
           <Typography variant="headline">
-            Wednesday, 30/01/2019
+            {title}
           </Typography>
-        </div>
+          <Typography variant="body1">30/01/2019</Typography>
+        </section>
         <Divider/>
         <ul className={classes.cardDetails}>
           {renderDetail(ScheduleIcon, time)}
@@ -45,8 +46,7 @@ const flexDisplay = {
 
 const styles = {
   cardTitle: {
-    display: 'flex',
-    alignItems: 'center',
+    ...flexDisplay,
     paddingBottom: 15
   },
   cardDetails: {
