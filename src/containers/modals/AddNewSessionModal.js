@@ -1,4 +1,6 @@
 import React from 'react';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -7,6 +9,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Slide from '@material-ui/core/Slide';
+import { startSession } from '../../state-management/session/action-creators';
 import { Link } from 'react-router-dom';
 
 function SlideTransition(props) {
@@ -28,6 +31,11 @@ class AddNewSessionModal extends React.Component {
 
   handleChange = ({ target }) => {
     this.setState({ sessionName: target.value });
+  }
+
+  handleConfirm = () => {
+    this.props.onConfirm(this.state.sessionName);
+    this.props.onClose();
   }
 
   render() {
@@ -57,13 +65,13 @@ class AddNewSessionModal extends React.Component {
         </DialogContent>
         <DialogActions>
           <Button
-            onClick={this.props.onCancel}
+            onClick={this.props.onClose}
             color="primary"
           >
             Cancel
           </Button>
           <Button
-            onClick={this.props.onConfirm}
+            onClick={this.handleConfirm}
             color="primary"
           >
             <Link to="/session">Start</Link>
@@ -74,4 +82,14 @@ class AddNewSessionModal extends React.Component {
   }
 }
 
-export default AddNewSessionModal;
+function mapDispatchToProps(dispatch) {
+  return {
+    onConfirm(title) {
+      dispatch(startSession(title));
+    } 
+  };
+}
+
+export default compose(
+  connect(null, mapDispatchToProps)
+)(AddNewSessionModal);

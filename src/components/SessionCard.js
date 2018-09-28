@@ -23,7 +23,7 @@ function SessionCard({ title, time, cost, drinks, classes }) {
           <Typography variant="body1">30/01/2019</Typography>
         </section>
         <Divider/>
-        <ul className={classes.cardDetails}>
+        <section className={classes.cardDetails}>
           <TextIcon
             iconComponent={ScheduleIcon}
             text={time}
@@ -36,7 +36,7 @@ function SessionCard({ title, time, cost, drinks, classes }) {
             iconComponent={CartIcon}
             text={drinks}
           />
-        </ul>
+        </section>
       </CardContent>
     </Card>
   );

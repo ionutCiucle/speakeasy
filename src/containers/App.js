@@ -1,9 +1,12 @@
 import React from 'react';
 import { withStyles, MuiThemeProvider } from '@material-ui/core/styles';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
 import Header from '../components/Header';
 import AddNewSessionModal from './modals/AddNewSessionModal';
 import { speakeasyTheme } from '../styling/theme';
 import { lightGray } from '../styling/colors';
+import { endSession } from '../state-management/session/action-creators';
 
 class App extends React.PureComponent {
   constructor() {
@@ -12,17 +15,14 @@ class App extends React.PureComponent {
       showModal: false
     };
   }
-    
-  toggleModalVisibility(show) {
-    this.setState({ showModal: !!show });
-  }
 
+  // move the modal visiblity property in a layout reducer
   getToggleModalVisibilityHandler = (show) => () => {
     this.setState({ showModal: !!show });
   }
 
   render() {
-    const { classes, children } = this.props;
+    const { classes, children, sessionInProgress, onEndSession } = this.props;
     const { showModal } = this.state;
 
     return (
@@ -30,10 +30,13 @@ class App extends React.PureComponent {
         <MuiThemeProvider theme={speakeasyTheme}>
           <AddNewSessionModal
             open={showModal}
-            onConfirm={this.getToggleModalVisibilityHandler(false)}
-            onCancel={this.getToggleModalVisibilityHandler(false)}
+            onClose={this.getToggleModalVisibilityHandler(false)}
           />
-          <Header onStartSession={this.getToggleModalVisibilityHandler(true)}/> 
+          <Header
+            sessionInProgress={sessionInProgress} 
+            onStartSession={this.getToggleModalVisibilityHandler(true)}
+            onEndSession={onEndSession}
+          /> 
           <main className={classes.main}>
             {children}
           </main>
@@ -60,4 +63,21 @@ const styles = {
   }
 };
 
-export default withStyles(styles)(App);
+function mapStateToProps(state) {
+  return {
+    sessionInProgress: state.session.currentSession !== null
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    onEndSession() {
+      dispatch(endSession());
+    }
+  };
+}
+
+export default compose(
+  connect(mapStateToProps, mapDispatchToProps),
+  withStyles(styles)
+)(App);
