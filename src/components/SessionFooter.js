@@ -5,33 +5,41 @@ import PaymentIcon from '@material-ui/icons/Payment';
 import CartIcon from '@material-ui/icons/ShoppingCart';
 import { rowFlexDisplay } from '../styling/mixins';
 import TextIcon from './TextIcon';
-import { white } from '../styling/colors';
+import Paper from '@material-ui/core/Paper';
 
 function SessionFooter({ sessionName, drinks, cost, classes }) {
   return (
     <footer className={classes.sessionFooter}>
-      <TextIcon
-        iconComponent={EventIcon}
-        text={sessionName}
-      />
-      <TextIcon
-        iconComponent={CartIcon}
-        text={drinks}
-      />
-      <TextIcon 
-        iconComponent={PaymentIcon}
-        text={cost}
-      />
+      <Paper
+        elevation={4}
+        square
+        className={classes.footerPaper}
+      >
+        <TextIcon
+          iconComponent={EventIcon}
+          text={sessionName}
+        />
+        <TextIcon
+          iconComponent={CartIcon}
+          text={drinks}
+        />
+        <TextIcon 
+          iconComponent={PaymentIcon}
+          text={cost}
+        />
+      </Paper>
     </footer>
   );
 }
 
 const styles = {
   sessionFooter: {
-    padding: 10,
+    width: '100%'
+  },
+  footerPaper: {
     width: '100%',
-    backgroundColor: white,
-    ...rowFlexDisplay
+    ...rowFlexDisplay,
+    padding: 10
   }
 };
 
