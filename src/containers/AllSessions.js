@@ -19,6 +19,7 @@ class AllSessions extends React.PureComponent {
 
   renderSessionCards() {
     const { classes } = this.props;
+
     return this.state.sessions.map(({ id, title, time, cost, drinks }) => (
       <li
         key={id}
@@ -37,6 +38,7 @@ class AllSessions extends React.PureComponent {
 
   render() {
     const { classes } = this.props;
+
     return (
       <ul className={classes.allSessions}>{this.renderSessionCards()}</ul>
     );

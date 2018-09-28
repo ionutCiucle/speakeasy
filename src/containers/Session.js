@@ -28,7 +28,7 @@ class Session extends React.Component {
           textColor="primary"
           centered
         >
-          <Tab label="Drinks"/>
+          <Tab label="Session drinks"/>
           <Tab label="Register drink"/>
         </Tabs>
         <div className={classes.content}>
