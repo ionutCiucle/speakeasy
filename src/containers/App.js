@@ -17,6 +17,10 @@ class App extends React.PureComponent {
     this.setState({ showModal: !!show });
   }
 
+  getToggleModalVisibilityHandler = (show) => () => {
+    this.setState({ showModal: !!show });
+  }
+
   render() {
     const { classes, children } = this.props;
     const { showModal } = this.state;
@@ -26,9 +30,9 @@ class App extends React.PureComponent {
         <MuiThemeProvider theme={speakeasyTheme}>
           <AddNewSessionModal
             open={showModal}
-            onClose={this.toggleModalVisibility.bind(this, false)}
+            onClose={this.getToggleModalVisibilityHandler(false)}
           />
-          <Header onStartSession={this.toggleModalVisibility.bind(this, true)}/> 
+          <Header onStartSession={this.getToggleModalVisibilityHandler(true)}/> 
           <main className={classes.main}>
             {children}
           </main>
