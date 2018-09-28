@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import AddNewSessionModal from './modals/AddNewSessionModal';
 import { speakeasyTheme } from '../styling/theme';
 import { lightGray } from '../styling/colors';
+import { endSession } from '../state-management/session/action-creators';
 
 class App extends React.PureComponent {
   constructor() {
@@ -21,7 +22,7 @@ class App extends React.PureComponent {
   }
 
   render() {
-    const { classes, children, sessionInProgress } = this.props;
+    const { classes, children, sessionInProgress, onEndSession } = this.props;
     const { showModal } = this.state;
 
     return (
@@ -34,6 +35,7 @@ class App extends React.PureComponent {
           <Header
             sessionInProgress={sessionInProgress} 
             onStartSession={this.getToggleModalVisibilityHandler(true)}
+            onEndSession={onEndSession}
           /> 
           <main className={classes.main}>
             {children}
@@ -67,7 +69,15 @@ function mapStateToProps(state) {
   };
 }
 
+function mapDispatchToProps(dispatch) {
+  return {
+    onEndSession() {
+      dispatch(endSession());
+    }
+  };
+}
+
 export default compose(
-  connect(mapStateToProps, null),
+  connect(mapStateToProps, mapDispatchToProps),
   withStyles(styles)
 )(App);

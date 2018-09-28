@@ -38,7 +38,7 @@ export default function sessionReducer(state = initialState, action) {
         sessions: state.sessions.concat([{
           ...state.currentSession,
           endDate: Date.now(),
-          time: state.currentSession.endDate - state.currentSession.id
+          time: Date.now() - state.currentSession.id
         }])
       };
     }

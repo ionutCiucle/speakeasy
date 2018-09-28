@@ -5,8 +5,9 @@ import FlighLandIcon from '@material-ui/icons/FlightLand';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 
-function Header({ classes, sessionInProgress, onStartSession }) {
+function Header({ classes, sessionInProgress, onStartSession, onEndSession }) {
   return (
     <AppBar
       color="primary"
@@ -33,7 +34,14 @@ function Header({ classes, sessionInProgress, onStartSession }) {
           >
           Start new session
           </Button>
-        ) : null }
+        ) : (
+          <Button
+            color="secondary"
+            onClick={onEndSession}
+          >
+            <Link to="/">End session</Link>
+          </Button>
+        ) }
       </Toolbar>
     </AppBar>
   );
