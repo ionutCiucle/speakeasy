@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -8,8 +9,9 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import { withStyles } from '@material-ui/core/styles';
 import TextIcon from './TextIcon';
+import type { Session } from 'speakeasy-types';
 
-function SessionCard({ title, time, cost, drinks, classes }) {
+function SessionCard({ title, time, cost, drinks, classes }: Session) {
   return ( 
     <Card> 
       <CardContent>

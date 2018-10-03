@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import EventIcon from '@material-ui/icons/Event';
@@ -7,7 +8,14 @@ import { rowFlexDisplay } from '../styling/mixins';
 import TextIcon from './TextIcon';
 import Paper from '@material-ui/core/Paper';
 
-function SessionFooter({ sessionName, drinks, cost, classes }) {
+type Props = {
+  sessionName: string,
+  drinks: number,
+  cost: string,
+  classes: Object
+};
+
+function SessionFooter({ sessionName, drinks, cost, classes }: Props) {
   return (
     <footer className={classes.sessionFooter}>
       <Paper

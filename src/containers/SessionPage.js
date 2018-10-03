@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
@@ -6,8 +7,17 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import SessionFooter from '../components/SessionFooter';
 import { columnFlexDisplay } from '../styling/mixins';
+import type { Session } from 'speakeasy-types';
 
-class Session extends React.Component {
+type Props = {
+  currentSession: Session,
+  classes: Object
+};
+type State = {
+  value: number
+};
+
+class SessionPage extends React.Component<Props, State> {
   constructor() {
     super();
     this.state = { value: 0 };
@@ -74,6 +84,6 @@ function mapStateToProps(state) {
 export default compose(
   connect(mapStateToProps),
   withStyles(styles)
-)(Session);
+)(SessionPage);
 
 // export default withStyles(styles)(Session);

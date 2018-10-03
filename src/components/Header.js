@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
@@ -27,7 +28,7 @@ function Header({ classes, sessionInProgress, onStartSession, onEndSession }) {
             Speakeasy
           </Typography>
         </div>
-        { !sessionInProgress ? (
+        { !sessionInProgress ? ( 
           <Button
             color="secondary"
             onClick={onStartSession}

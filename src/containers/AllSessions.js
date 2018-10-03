@@ -1,10 +1,17 @@
+// @flow
 import React from 'react';
 import SessionCard from '../components/SessionCard';
 import { withStyles } from '@material-ui/core/styles';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
+import type { Session } from 'speakeasy-types';
 
-class AllSessions extends React.PureComponent {
+type Props = {
+  sessions: Session[],
+  classes: Object
+};
+
+class AllSessions extends React.PureComponent<Props> {
   renderSessionCards() {
     const { classes, sessions } = this.props;
 

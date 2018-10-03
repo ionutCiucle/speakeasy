@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
@@ -21,7 +22,17 @@ function SlideTransition(props) {
   );
 }
 
-class AddNewSessionModal extends React.Component {
+type Props = {
+  open: boolean,
+  onConfirm: (any) => {},
+  onClose: () => {}
+};
+
+type State = {
+  sessionName: string
+};
+
+class AddNewSessionModal extends React.Component<Props, State> {
   constructor() {
     super();
     this.state = {
@@ -42,7 +53,7 @@ class AddNewSessionModal extends React.Component {
     return (
       <Dialog
         open={this.props.open}
-        onClose={this.props.onCancel}
+        onClose={this.props.onClose}
         TransitionComponent={SlideTransition}
       >
         <DialogTitle>Start your new bender</DialogTitle>

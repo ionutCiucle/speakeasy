@@ -21,6 +21,11 @@
     "newline-after-var": [2, "always"],
     "no-multiple-empty-lines": [2, { "max": 1 }],
     "no-multi-spaces": 2,
+    "no-param-reassign": 2,
+    "no-unneeded-ternary": 2,
+    "space-infix-ops": 2,
+    "space-before-function-paren": [2, "never"],
+    "import/newline-after-import": [2, { "count": 1 }],
     "react/jsx-handler-names": 2,
     "react/jsx-uses-react": 2,
     "react/jsx-uses-vars": 2,
@@ -35,13 +40,10 @@
     "react/jsx-indent": [2, 2],
     "react/react-in-jsx-scope": 2,
     "react/jsx-closing-bracket-location": [2],
-    "react/jsx-equals-spacing": [2, "never"],
-    "no-param-reassign": 2,
-    "no-unneeded-ternary": 2,
-    "space-infix-ops": 2,
-    "space-before-function-paren": [2, "never"]
+    "react/jsx-equals-spacing": [2, "never"]
   },
   "plugins": [
-    "react"
+    "react",
+    "import"
   ]
 }

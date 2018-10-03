@@ -1,4 +1,5 @@
 import { START_SESSION, END_SESSION } from './action-types';
+
 export function startSession(title) {
   return {
     type: START_SESSION,

@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { withStyles, MuiThemeProvider } from '@material-ui/core/styles';
 import { compose } from 'redux';
@@ -7,8 +8,20 @@ import AddNewSessionModal from './modals/AddNewSessionModal';
 import { speakeasyTheme } from '../styling/theme';
 import { lightGray } from '../styling/colors';
 import { endSession } from '../state-management/session/action-creators';
+import type { Node } from 'react';
 
-class App extends React.PureComponent {
+type Props = {
+  sessionInProgress: boolean,
+  children: Node[],
+  classes: Object,
+  onEndSession: () => {},
+};
+
+type State = {
+  showModal: boolean
+};
+
+class App extends React.PureComponent<Props, State> {
   constructor() {
     super();
     this.state = {
