@@ -21,7 +21,7 @@ class AllSessions extends React.PureComponent<Props> {
         className={classes.sessionCard}
       >
         <SessionCard
-          id={id}  
+          id={id}
           title={title}
           time={time}
           cost={cost}
@@ -65,5 +65,3 @@ export default compose(
   connect(mapStateToProps, null),
   withStyles(styles)
 )(AllSessions);
-
-// export default withStyles(styles)(AllSessions);
