@@ -1,5 +1,6 @@
 import { View, StyleSheet } from "react-native";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
+import { Colors } from "../../../styles";
 
 export const Navigation = () => {
   return (
@@ -32,10 +33,11 @@ const styles = StyleSheet.create({
     paddingRight: 40,
     paddingTop: 20,
     paddingBottom: 50,
-    backgroundColor: "lightblue",
+    backgroundColor: Colors.Jonquill,
   },
   icon: {
     fontSize: 30,
+    color: Colors.RaisinBlack,
     // color: "white",
   },
 });
