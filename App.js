@@ -1,12 +1,16 @@
 import { StyleSheet } from "react-native";
 import { Provider } from "react-redux";
+import { NativeRouter } from "react-router-native";
 import { store } from "./src/stateManagement/store";
 import { Shell } from "./src/Shell";
+import { Routes } from "./src/Routes";
 
 export default function App() {
   return (
     <Provider store={store}>
-      <Shell />
+      <NativeRouter>
+        <Routes />
+      </NativeRouter>
     </Provider>
   );
 }
