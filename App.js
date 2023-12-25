@@ -1,9 +1,14 @@
-// import { StatusBar } from "expo-status-bar";
 import { StyleSheet } from "react-native";
-import { Root } from "./src/Root";
+import { Provider } from "react-redux";
+import { store } from "./src/stateManagement/store";
+import { Shell } from "./src/Shell";
 
 export default function App() {
-  return <Root />;
+  return (
+    <Provider store={store}>
+      <Shell />
+    </Provider>
+  );
 }
 
 const styles = StyleSheet.create({
