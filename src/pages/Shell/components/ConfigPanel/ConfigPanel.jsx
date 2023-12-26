@@ -29,8 +29,8 @@ export const ConfigPanel = ({ visible, onClosePress }) => {
       // that extracts the height at runtime;
       // 100% doesn't mean 100% of the box height in react native, it seems :S
       toValue: "-852%",
-      duration: 700,
-      easing: Easing.bounce,
+      duration: 300,
+      easing: Easing.ease,
       useNativeDriver: true,
     }).start();
   };
