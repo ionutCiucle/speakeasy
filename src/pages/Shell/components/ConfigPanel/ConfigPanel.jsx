@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useEffect } from "react";
 import {
   View,
   Text,
@@ -13,7 +13,6 @@ import { flex, Colors } from "../../../../styles";
 
 export const ConfigPanel = ({ visible, onClosePress }) => {
   const slideAnim = useRef(new Animated.Value(0)).current;
-  const containerRef = useRef(null);
 
   useEffect(() => {
     if (visible) {
@@ -45,7 +44,6 @@ export const ConfigPanel = ({ visible, onClosePress }) => {
 
   return (
     <Animated.View
-      ref={containerRef}
       style={{ ...styles.container, transform: [{ translateY: slideAnim }] }}
     >
       <Pressable style={styles.closeButton} onPress={onClosePress}>
