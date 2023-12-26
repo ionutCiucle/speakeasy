@@ -1,12 +1,30 @@
-import { View, TouchableHighlight, Text, StyleSheet } from "react-native";
-import { Colors, flex } from "../../../../styles";
+import { useEffect } from "react";
+import { View, StyleSheet } from "react-native";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-native";
 
-export const Home = ({ onStart }) => {
+import { startSession } from "../../../../stateManagement/sessionSlice";
+import { Colors, flex } from "../../../../styles";
+import { BigButton } from "../../components/BigButton/BigButton";
+
+export const Home = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { activeSession } = useSelector((state) => state.session);
+
+  useEffect(() => {
+    if (activeSession !== null) {
+      navigate("/active-session");
+    }
+  }, [activeSession]);
+
+  const handleStartButtonClick = () => {
+    dispatch(startSession());
+  };
+
   return (
     <View style={styles.container}>
-      <TouchableHighlight onPress={onStart}>
-        <Text style={styles.button}>Start new session</Text>
-      </TouchableHighlight>
+      <BigButton onPress={handleStartButtonClick} label="Start new session" />
     </View>
   );
 };

@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from "react-router-native";
 
 import { Colors } from "../../../../styles";
 
-export const Navigation = () => {
+export const Navigation = ({ activeSessionExists }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -12,7 +12,6 @@ export const Navigation = () => {
     navButtonRouteList.some((routeName) => location.pathname === routeName)
       ? styles.iconActive
       : null;
-  // location.pathname === navButtonRoute ? styles.iconActive : null;
 
   return (
     <View style={styles.container}>
@@ -22,7 +21,11 @@ export const Navigation = () => {
           style={{ ...styles.icon, ...getActiveStyling(["/update-menu"]) }}
         />
       </Pressable>
-      <Pressable onPress={() => navigate("/active-session")}>
+      <Pressable
+        onPress={() =>
+          activeSessionExists ? navigate("/home") : navigate("/create-session")
+        }
+      >
         <FontAwesome5
           name="bolt"
           style={{

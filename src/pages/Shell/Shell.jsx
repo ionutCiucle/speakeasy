@@ -13,7 +13,7 @@ export const Shell = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { showConfigPanel } = useSelector((state) => state.layout);
-  // const { activeSession } = useSelector((state) => state.session);
+  const { activeSession } = useSelector((state) => state.session);
 
   useEffect(() => {
     navigate("/active-session");
@@ -29,7 +29,7 @@ export const Shell = () => {
       <View style={styles.body}>
         <Outlet />
       </View>
-      <Navigation />
+      <Navigation activeSessionExists={activeSession !== null} />
       <ConfigPanel visible={showConfigPanel} onClosePress={handleCogPress} />
     </View>
   );
