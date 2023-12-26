@@ -1,8 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
+
 // import logger from "redux-logger";
 import layoutSlice from "./layoutSlice";
-import sessionSlice from "./sessionSlice";
 import menuSlice from "./menuSlice";
+import sessionSlice from "./sessionSlice";
 
 export const store = configureStore({
   reducer: {

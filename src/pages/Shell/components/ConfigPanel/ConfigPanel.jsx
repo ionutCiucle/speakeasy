@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { useEffect, useRef } from "react";
 import {
   View,
   Text,
@@ -8,7 +9,7 @@ import {
   Animated,
   Easing,
 } from "react-native";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+
 import { flex, Colors } from "../../../../styles";
 
 export const ConfigPanel = ({ visible, onClosePress }) => {

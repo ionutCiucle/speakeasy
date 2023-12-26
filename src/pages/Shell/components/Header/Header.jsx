@@ -1,5 +1,6 @@
-import { View, Text, StyleSheet, Pressable } from "react-native";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
+import { View, Text, StyleSheet, Pressable } from "react-native";
+
 import { Colors } from "../../../../styles";
 
 export const Header = ({ onCogPress }) => {

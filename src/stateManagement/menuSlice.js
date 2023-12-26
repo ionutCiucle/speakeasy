@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+
 import { DrinkType, ServingType } from "./enums";
 
 const initialState = {

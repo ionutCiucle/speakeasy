@@ -15,7 +15,7 @@ const sessionSlice = createSlice({
         name: payload.name,
       };
     },
-    completeSession() {
+    completeSession(state) {
       state.completeSession.push({ ...state.activeSession });
       state.activeSession = null;
     },

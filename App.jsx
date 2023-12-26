@@ -1,11 +1,12 @@
 import { Provider } from "react-redux";
 import { NativeRouter, Routes, Route } from "react-router-native";
-import { store } from "./src/stateManagement/store";
+
 import { Shell } from "./src/pages/Shell";
-import { CreateSession } from "./src/pages/Shell/pages/CreateSession";
-import { CompletedSessions } from "./src/pages/Shell/pages/CompletedSessions";
-import { UpdateMenu } from "./src/pages/Shell/pages/UpdateMenu";
 import { ActiveSession } from "./src/pages/Shell/pages/ActiveSession";
+import { CompletedSessions } from "./src/pages/Shell/pages/CompletedSessions";
+import { CreateSession } from "./src/pages/Shell/pages/CreateSession";
+import { UpdateMenu } from "./src/pages/Shell/pages/UpdateMenu";
+import { store } from "./src/stateManagement/store";
 
 export default function App() {
   return (

@@ -1,6 +1,7 @@
-import { View, StyleSheet, Pressable } from "react-native";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
+import { View, StyleSheet, Pressable } from "react-native";
 import { useNavigate, useLocation } from "react-router-native";
+
 import { Colors } from "../../../../styles";
 
 export const Navigation = () => {

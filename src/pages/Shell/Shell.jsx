@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import { View } from "react-native";
-import { Outlet, useNavigate } from "react-router-native";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigation } from "./components/Navigation";
-import { Header } from "./components/Header";
+import { Outlet, useNavigate } from "react-router-native";
+
 import { ConfigPanel } from "./components/ConfigPanel";
+import { Header } from "./components/Header";
+import { Navigation } from "./components/Navigation";
 import { toggleConfigPanelVisibility } from "../../stateManagement/layoutSlice";
 import { Colors, flex } from "../../styles";
 

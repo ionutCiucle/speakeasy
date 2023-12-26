@@ -1,4 +1,4 @@
-import { ScrollView } from "react-native";
+import { ScrollView, TextInput } from "react-native";
 
 export const CreateSession = () => {
   return (
