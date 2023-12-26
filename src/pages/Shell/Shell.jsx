@@ -28,9 +28,13 @@ export const Shell = () => {
         <Outlet />
       </View>
       <Navigation />
-      {showConfigPanel && (
-        <ConfigPanel style={styles.configPanel} onClosePress={handleCogPress} />
-      )}
+      <ConfigPanel
+        style={{
+          ...styles.configPanel,
+          ...(showConfigPanel ? styles.visibleConfigPanel : null),
+        }}
+        onClosePress={handleCogPress}
+      />
     </View>
   );
 };
@@ -50,8 +54,11 @@ const styles = {
   },
   configPanel: {
     position: "absolute",
-    top: 0,
+    top: "100%",
     left: 0,
     backgroundColor: Colors.White,
+  },
+  visibleConfigPanel: {
+    top: 0,
   },
 };
