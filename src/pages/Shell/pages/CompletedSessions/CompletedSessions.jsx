@@ -6,7 +6,7 @@ export const CompletedSessions = () => {
   return (
     <View style={styles.container}>
       {completedSessions.map((session, index) => (
-        <View>
+        <View key={index}>
           <Text>{`Started at: ${session.startDate}`}</Text>
         </View>
       ))}

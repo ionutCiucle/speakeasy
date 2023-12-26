@@ -23,7 +23,7 @@ export const Navigation = ({ activeSessionExists }) => {
       </Pressable>
       <Pressable
         onPress={() =>
-          activeSessionExists ? navigate("/home") : navigate("/create-session")
+          activeSessionExists ? navigate("/active-session") : navigate("/home")
         }
       >
         <FontAwesome5
