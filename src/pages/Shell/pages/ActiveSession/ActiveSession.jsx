@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-native";
 
 import { completeSession } from "../../../../stateManagement/sessionSlice";
 import { flex } from "../../../../styles";
+import { timestampToDateString } from "../../../utils";
 import { BigButton } from "../../components/BigButton/BigButton";
 import { PageHeading } from "../../components/PageHeading";
 
@@ -22,7 +23,9 @@ export const ActiveSession = () => {
   return (
     <View style={styles.container}>
       <PageHeading text="Active Session" />
-      <Text>{`Started at ${activeSession?.startDate}`}</Text>
+      <Text>{`Started at ${timestampToDateString(
+        activeSession?.startDate,
+      )}`}</Text>
       <BigButton
         label="End Session"
         onPress={() => dispatch(completeSession())}

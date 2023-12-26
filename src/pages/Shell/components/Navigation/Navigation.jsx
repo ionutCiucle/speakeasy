@@ -30,7 +30,7 @@ export const Navigation = ({ activeSessionExists }) => {
           name="bolt"
           style={{
             ...styles.icon,
-            ...getActiveStyling(["/active-session", "/create-session"]),
+            ...getActiveStyling(["/active-session", "/home"]),
           }}
         />
       </Pressable>
