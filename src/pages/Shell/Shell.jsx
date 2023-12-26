@@ -13,6 +13,7 @@ export const Shell = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { showConfigPanel } = useSelector((state) => state.layout);
+  // const { activeSession } = useSelector((state) => state.session);
 
   useEffect(() => {
     navigate("/active-session");
@@ -42,7 +43,7 @@ const styles = {
   },
   body: {
     backgroundColor: Colors.White,
-    padding: 10,
+    flex: 1,
   },
   bodyText: {
     fontSize: 16,

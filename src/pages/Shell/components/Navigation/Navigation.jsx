@@ -8,15 +8,18 @@ export const Navigation = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const getActiveStyling = (navButtonRoute) =>
-    location.pathname === navButtonRoute ? styles.iconActive : null;
+  const getActiveStyling = (navButtonRouteList) =>
+    navButtonRouteList.some((routeName) => location.pathname === routeName)
+      ? styles.iconActive
+      : null;
+  // location.pathname === navButtonRoute ? styles.iconActive : null;
 
   return (
     <View style={styles.container}>
       <Pressable onPress={() => navigate("/update-menu")}>
         <FontAwesome5
           name="pen"
-          style={{ ...styles.icon, ...getActiveStyling("/update-menu") }}
+          style={{ ...styles.icon, ...getActiveStyling(["/update-menu"]) }}
         />
       </Pressable>
       <Pressable onPress={() => navigate("/active-session")}>
@@ -24,14 +27,17 @@ export const Navigation = () => {
           name="bolt"
           style={{
             ...styles.icon,
-            ...getActiveStyling("/active-session"),
+            ...getActiveStyling(["/active-session", "/create-session"]),
           }}
         />
       </Pressable>
       <Pressable onPress={() => navigate("/completed-sessions")}>
         <FontAwesome5
           name="list"
-          style={{ ...styles.icon, ...getActiveStyling("/completed-sessions") }}
+          style={{
+            ...styles.icon,
+            ...getActiveStyling(["/completed-sessions"]),
+          }}
         />
       </Pressable>
     </View>
