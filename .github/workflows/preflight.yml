@@ -18,6 +18,6 @@ jobs:
       - name: Install Node dependencies
         run: npm ci
 
-      - name: Run ESlint
-        run: npm run lint:check
+      - name: Run TS Check
+        run: npm run ts:check
         
