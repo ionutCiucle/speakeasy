@@ -1,5 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { useSelector, useDispatch, TypedUseSelectorHook } from 'react-redux';
 
 import layoutSlice from './layoutSlice';
 import menuSlice from './menuSlice';
