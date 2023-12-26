@@ -17,3 +17,5 @@ export const flex = (flexDirection, justifyContent, alignItems) => ({
   justifyContent,
   alignItems,
 });
+
+console.log("x");
