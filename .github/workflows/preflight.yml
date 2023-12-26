@@ -18,8 +18,6 @@ jobs:
       - name: Install Node dependencies
         run: npm ci
 
-      - name: Run Linters
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
-          prettier: true
+      - name: Run ESlint
+        run: npm run lint:check
+        
