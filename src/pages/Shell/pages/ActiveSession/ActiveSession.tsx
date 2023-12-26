@@ -1,8 +1,11 @@
 import { useEffect } from "react";
 import { Text, View, StyleSheet } from "react-native";
-import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-native";
 
+import {
+  useAppSelector,
+  useAppDispatch,
+} from "../../../../stateManagement/hooks";
 import { completeSession } from "../../../../stateManagement/sessionSlice";
 import { flex } from "../../../../styles";
 import { timestampToDateString } from "../../../utils";
@@ -10,9 +13,9 @@ import { BigButton } from "../../components/BigButton/BigButton";
 import { PageHeading } from "../../components/PageHeading";
 
 export const ActiveSession = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const { activeSession } = useSelector((state) => state.session);
+  const { activeSession } = useAppSelector((state) => state.session);
 
   useEffect(() => {
     if (activeSession === null) {
@@ -24,7 +27,8 @@ export const ActiveSession = () => {
     <View style={styles.container}>
       <PageHeading text="Active Session" />
       <Text>{`Started at ${timestampToDateString(
-        activeSession?.startDate,
+        // @ts-ignore
+        activeSession?.startDate
       )}`}</Text>
       <BigButton
         label="End Session"

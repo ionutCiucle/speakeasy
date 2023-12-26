@@ -10,9 +10,14 @@ import {
   Easing,
 } from "react-native";
 
-import { flex, Colors } from "../../../../styles";
+import { flex, Color } from "../../../../styles";
 
-export const ConfigPanel = ({ visible, onClosePress }) => {
+type Props = {
+  visible: boolean;
+  onClosePress: (...args: any) => void;
+};
+
+export const ConfigPanel = ({ visible, onClosePress }: Props) => {
   const slideAnim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
@@ -28,6 +33,8 @@ export const ConfigPanel = ({ visible, onClosePress }) => {
       // TODO: Find a way to move this exactly its height up in a way
       // that extracts the height at runtime;
       // 100% doesn't mean 100% of the box height in react native, it seems :S
+      // Also, after finding the solution, remove ts-ignore statements
+      // @ts-ignore
       toValue: "-852%",
       duration: 300,
       easing: Easing.ease,
@@ -37,6 +44,7 @@ export const ConfigPanel = ({ visible, onClosePress }) => {
 
   const slideOut = () => {
     Animated.timing(slideAnim, {
+      // @ts-ignore
       toValue: "0",
       duration: 150,
       useNativeDriver: true,
@@ -67,7 +75,7 @@ const styles = StyleSheet.create({
     height: "100%",
     top: "100%",
     position: "absolute",
-    backgroundColor: Colors.White,
+    backgroundColor: Color.White,
     border: "1px solid black",
   },
   closeButton: {

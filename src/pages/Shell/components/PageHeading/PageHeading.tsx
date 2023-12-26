@@ -1,6 +1,10 @@
 import { Text, StyleSheet } from "react-native";
 
-export const PageHeading = ({ text }) => (
+type Props = {
+  text: string;
+};
+
+export const PageHeading = ({ text }: Props) => (
   <Text style={styles.label}>{text}</Text>
 );
 

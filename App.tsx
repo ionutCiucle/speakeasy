@@ -14,14 +14,10 @@ export default function App() {
       <NativeRouter>
         <Routes>
           <Route path="/" element={<Shell />}>
-            <Route exact path="/home" element={<Home />} />
-            <Route exact path="/active-session" element={<ActiveSession />} />
-            <Route exact path="/update-menu" element={<UpdateMenu />} />
-            <Route
-              exact
-              path="/completed-sessions"
-              element={<CompletedSessions />}
-            />
+            <Route path="/home" element={<Home />} />
+            <Route path="/active-session" element={<ActiveSession />} />
+            <Route path="/update-menu" element={<UpdateMenu />} />
+            <Route path="/completed-sessions" element={<CompletedSessions />} />
           </Route>
         </Routes>
       </NativeRouter>

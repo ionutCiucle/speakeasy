@@ -1,6 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+type LayoutState = {
+  showConfigPanel: boolean;
+};
+
+const initialState: LayoutState = {
   showConfigPanel: false,
 };
 

@@ -2,7 +2,7 @@ import color from "color";
 
 const raisinBlackBase = color("#2e282a");
 
-export const Colors = {
+export const Color = {
   Jonquill: "#ffc914",
   RaisinBlack: raisinBlackBase.hex(),
   RaisinBlackLight: raisinBlackBase.lighten(2.2).hex(),
@@ -12,7 +12,16 @@ export const Colors = {
   White: "#ffffff",
 };
 
-export const flex = (flexDirection, justifyContent, alignItems) => ({
+export const flex = (
+  flexDirection: "row" | "column",
+  justifyContent:
+    | "flex-start"
+    | "flex-end"
+    | "space-between"
+    | "space-around"
+    | "center",
+  alignItems: "flex-start" | "flex-end" | "stretch" | "center"
+) => ({
   flexDirection,
   justifyContent,
   alignItems,
