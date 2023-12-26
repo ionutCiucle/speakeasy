@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 type LayoutState = {
   showConfigPanel: boolean;
@@ -9,7 +9,7 @@ const initialState: LayoutState = {
 };
 
 const layoutSlice = createSlice({
-  name: "layout",
+  name: 'layout',
   initialState,
   reducers: {
     toggleConfigPanelVisibility(state) {

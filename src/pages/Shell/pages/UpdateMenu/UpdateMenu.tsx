@@ -1,9 +1,7 @@
-import React, { useState } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import React from 'react';
+import { View, Text } from 'react-native';
 
 export const UpdateMenu = () => {
-  const [activeTab, setActiveTab] = useState("drinks");
-
   return (
     <View>
       <Text>Menu comes here</Text>

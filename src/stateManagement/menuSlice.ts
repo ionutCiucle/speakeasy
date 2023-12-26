@@ -1,6 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
-import { DrinkType, ServingType } from "./enums";
+import { DrinkType, ServingType } from './enums';
 
 type Drink = {
   id: string;
@@ -24,22 +24,22 @@ type MenuState = {
 const initialState: MenuState = {
   drinks: [
     {
-      id: "1",
-      name: "Pilsner",
+      id: '1',
+      name: 'Pilsner',
       type: DrinkType.Beer,
       servingType: ServingType.Pint,
       price: 17,
     },
     {
-      id: "2",
-      name: "Hacker Pschorr",
+      id: '2',
+      name: 'Hacker Pschorr',
       type: DrinkType.Beer,
       servingType: ServingType.Pint,
       price: 20,
     },
     {
-      id: "3",
-      name: "Flat White",
+      id: '3',
+      name: 'Flat White',
       type: DrinkType.Coffee,
       servingType: ServingType.Cup,
       price: 15,
@@ -47,15 +47,15 @@ const initialState: MenuState = {
   ],
   meals: [
     {
-      id: "1",
-      name: "Goulash Soup",
+      id: '1',
+      name: 'Goulash Soup',
       price: 20,
     },
   ],
 };
 
 const menuSlice = createSlice({
-  name: "menu",
+  name: 'menu',
   initialState,
   reducers: {},
 });

@@ -1,9 +1,9 @@
-import { View, ScrollView, Text, StyleSheet } from "react-native";
+import { View, ScrollView, Text, StyleSheet } from 'react-native';
 
-import { useAppSelector } from "../../../../stateManagement/hooks";
-import { flex } from "../../../../styles";
-import { timestampToDateString } from "../../../utils";
-import { PageHeading } from "../../components/PageHeading";
+import { useAppSelector } from '../../../../stateManagement/hooks';
+import { flex } from '../../../../styles';
+import { timestampToDateString } from '../../../utils';
+import { PageHeading } from '../../components/PageHeading';
 
 export const CompletedSessions = () => {
   const { completedSessions } = useAppSelector((state) => state.session);
@@ -25,19 +25,19 @@ export const CompletedSessions = () => {
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
-    height: "100%",
+    width: '100%',
+    height: '100%',
   },
   sessionList: {
-    ...flex("column", "flex-start", "flex-start"),
+    ...flex('column', 'flex-start', 'flex-start'),
     flex: 1,
-    width: "100%",
+    width: '100%',
   },
   sessionItem: {
     padding: 10,
   },
   sessionItemHeading: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
 });

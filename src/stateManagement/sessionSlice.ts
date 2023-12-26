@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 type Session = {
   id: string;
@@ -17,7 +17,7 @@ const initialState: SessionState = {
 };
 
 const sessionSlice = createSlice({
-  name: "session",
+  name: 'session',
   initialState,
   reducers: {
     startSession(state) {

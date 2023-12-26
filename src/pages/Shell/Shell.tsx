@@ -1,13 +1,13 @@
-import { useEffect } from "react";
-import { View, StyleSheet } from "react-native";
-import { useAppSelector, useAppDispatch } from "../../stateManagement/hooks";
-import { Outlet, useNavigate } from "react-router-native";
+import { useEffect } from 'react';
+import { View, StyleSheet } from 'react-native';
+import { useAppSelector, useAppDispatch } from '../../stateManagement/hooks';
+import { Outlet, useNavigate } from 'react-router-native';
 
-import { ConfigPanel } from "./components/ConfigPanel";
-import { Header } from "./components/Header";
-import { Navigation } from "./components/Navigation";
-import { toggleConfigPanelVisibility } from "../../stateManagement/layoutSlice";
-import { Color, flex } from "../../styles";
+import { ConfigPanel } from './components/ConfigPanel';
+import { Header } from './components/Header';
+import { Navigation } from './components/Navigation';
+import { toggleConfigPanelVisibility } from '../../stateManagement/layoutSlice';
+import { Color, flex } from '../../styles';
 
 export const Shell = () => {
   const dispatch = useAppDispatch();
@@ -16,7 +16,7 @@ export const Shell = () => {
   const { activeSession } = useAppSelector((state) => state.session);
 
   useEffect(() => {
-    navigate("/active-session");
+    navigate('/active-session');
   }, []);
 
   const handleCogPress = () => {
@@ -37,9 +37,9 @@ export const Shell = () => {
 
 const styles = StyleSheet.create({
   container: {
-    ...flex("column", "space-between", "stretch"),
-    height: "100%",
-    position: "relative",
+    ...flex('column', 'space-between', 'stretch'),
+    height: '100%',
+    position: 'relative',
   },
   body: {
     backgroundColor: Color.White,
@@ -49,8 +49,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   configPanel: {
-    position: "absolute",
-    top: "100%",
+    position: 'absolute',
+    top: '100%',
     left: 0,
     backgroundColor: Color.White,
   },

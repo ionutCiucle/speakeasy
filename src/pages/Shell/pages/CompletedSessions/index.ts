@@ -1,1 +1,1 @@
-export { CompletedSessions } from "./CompletedSessions";
+export { CompletedSessions } from './CompletedSessions';

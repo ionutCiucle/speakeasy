@@ -1,4 +1,4 @@
-import { Text, StyleSheet } from "react-native";
+import { Text, StyleSheet } from 'react-native';
 
 type Props = {
   text: string;
@@ -12,6 +12,6 @@ const styles = StyleSheet.create({
   label: {
     padding: 20,
     fontSize: 35,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
 });

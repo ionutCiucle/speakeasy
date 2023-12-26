@@ -1,1 +1,1 @@
-declare module "color";
+declare module 'color';
