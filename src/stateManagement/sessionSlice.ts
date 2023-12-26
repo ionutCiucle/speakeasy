@@ -1,6 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+type Session = {
+  id: string;
+  startDate: number;
+  endDate: number | null;
+};
+
+type SessionState = {
+  activeSession: Session | null;
+  completedSessions: Session[];
+};
+
+const initialState: SessionState = {
   activeSession: null,
   completedSessions: [],
 };
@@ -9,17 +20,17 @@ const sessionSlice = createSlice({
   name: "session",
   initialState,
   reducers: {
-    startSession(state, payload) {
+    startSession(state) {
       state.activeSession = {
-        id: Date.now(),
-        name: payload.name,
+        id: `${Date.now()}`,
+        // name: payload.name,
         startDate: Date.now(),
         endDate: null,
       };
     },
     completeSession(state) {
       state.completedSessions.push({
-        ...state.activeSession,
+        ...state.activeSession!,
         endDate: Date.now(),
       });
       state.activeSession = null;

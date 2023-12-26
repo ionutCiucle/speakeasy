@@ -2,13 +2,17 @@ import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import { View, StyleSheet, Pressable } from "react-native";
 import { useNavigate, useLocation } from "react-router-native";
 
-import { Colors } from "../../../../styles";
+import { Color } from "../../../../styles";
 
-export const Navigation = ({ activeSessionExists }) => {
+type Props = {
+  activeSessionExists: boolean;
+};
+
+export const Navigation = ({ activeSessionExists }: Props) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const getActiveStyling = (navButtonRouteList) =>
+  const getActiveStyling = (navButtonRouteList: string[]) =>
     navButtonRouteList.some((routeName) => location.pathname === routeName)
       ? styles.iconActive
       : null;
@@ -56,13 +60,13 @@ const styles = StyleSheet.create({
     paddingRight: 40,
     paddingTop: 20,
     paddingBottom: 50,
-    backgroundColor: Colors.Jonquill,
+    backgroundColor: Color.Jonquill,
   },
   icon: {
     fontSize: 30,
-    color: Colors.RaisinBlackLight,
+    color: Color.RaisinBlackLight,
   },
   iconActive: {
-    color: Colors.RaisinBlack,
+    color: Color.RaisinBlack,
   },
 });

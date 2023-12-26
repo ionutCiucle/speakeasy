@@ -1,12 +1,12 @@
 import { View, ScrollView, Text, StyleSheet } from "react-native";
-import { useSelector } from "react-redux";
 
+import { useAppSelector } from "../../../../stateManagement/hooks";
 import { flex } from "../../../../styles";
 import { timestampToDateString } from "../../../utils";
 import { PageHeading } from "../../components/PageHeading";
 
 export const CompletedSessions = () => {
-  const { completedSessions } = useSelector((state) => state.session);
+  const { completedSessions } = useAppSelector((state) => state.session);
   return (
     <View style={styles.container}>
       <PageHeading text="Completed Sessions" />

@@ -1,16 +1,19 @@
 import { useEffect } from "react";
 import { View, StyleSheet } from "react-native";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-native";
 
+import {
+  useAppDispatch,
+  useAppSelector,
+} from "../../../../stateManagement/hooks";
 import { startSession } from "../../../../stateManagement/sessionSlice";
-import { Colors, flex } from "../../../../styles";
+import { Color, flex } from "../../../../styles";
 import { BigButton } from "../../components/BigButton/BigButton";
 
 export const Home = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const { activeSession } = useSelector((state) => state.session);
+  const { activeSession } = useAppSelector((state) => state.session);
 
   useEffect(() => {
     if (activeSession !== null) {
@@ -38,9 +41,9 @@ const styles = StyleSheet.create({
   button: {
     padding: 10,
     borderRadius: 20,
-    color: Colors.RaisinBlack,
+    color: Color.RaisinBlack,
     fontWeight: "bold",
     fontSize: 30,
-    backgroundColor: Colors.Jonquill,
+    backgroundColor: Color.Jonquill,
   },
 });
