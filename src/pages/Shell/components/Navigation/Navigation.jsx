@@ -1,8 +1,8 @@
-import { View, StyleSheet } from "react-native";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
+import { View, StyleSheet, Pressable } from "react-native";
 import { useNavigate, useLocation } from "react-router-native";
-import { Colors } from "../../../styles";
-import { useEffect } from "react";
+
+import { Colors } from "../../../../styles";
 
 export const Navigation = () => {
   const navigate = useNavigate();
@@ -13,24 +13,27 @@ export const Navigation = () => {
 
   return (
     <View style={styles.container}>
-      <FontAwesome5
-        name="pen"
-        style={{ ...styles.icon, ...getActiveStyling("/update-menu") }}
-        onPress={() => navigate("/update-menu")}
-      />
-      <FontAwesome5
-        name="bolt"
-        style={{
-          ...styles.icon,
-          ...getActiveStyling("/active-session"),
-        }}
-        onPress={() => navigate("/active-session")}
-      />
-      <FontAwesome5
-        name="list"
-        style={{ ...styles.icon, ...getActiveStyling("/completed-sessions") }}
-        onPress={() => navigate("/completed-sessions")}
-      />
+      <Pressable onPress={() => navigate("/update-menu")}>
+        <FontAwesome5
+          name="pen"
+          style={{ ...styles.icon, ...getActiveStyling("/update-menu") }}
+        />
+      </Pressable>
+      <Pressable onPress={() => navigate("/active-session")}>
+        <FontAwesome5
+          name="bolt"
+          style={{
+            ...styles.icon,
+            ...getActiveStyling("/active-session"),
+          }}
+        />
+      </Pressable>
+      <Pressable onPress={() => navigate("/completed-sessions")}>
+        <FontAwesome5
+          name="list"
+          style={{ ...styles.icon, ...getActiveStyling("/completed-sessions") }}
+        />
+      </Pressable>
     </View>
   );
 };
