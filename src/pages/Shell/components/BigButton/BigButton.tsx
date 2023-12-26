@@ -1,6 +1,6 @@
-import { Pressable, Text, StyleSheet } from "react-native";
+import { Pressable, Text, StyleSheet } from 'react-native';
 
-import { Color } from "../../../../styles";
+import { Color } from '../../../../styles';
 
 type Props = {
   label: string;
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 20,
     color: Color.RaisinBlack,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     fontSize: 30,
     backgroundColor: Color.Jonquill,
   },

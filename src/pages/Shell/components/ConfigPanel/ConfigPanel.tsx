@@ -1,5 +1,5 @@
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { useEffect, useRef } from "react";
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { useEffect, useRef } from 'react';
 import {
   View,
   Text,
@@ -8,9 +8,9 @@ import {
   Pressable,
   Animated,
   Easing,
-} from "react-native";
+} from 'react-native';
 
-import { flex, Color } from "../../../../styles";
+import { flex, Color } from '../../../../styles';
 
 type Props = {
   visible: boolean;
@@ -35,7 +35,7 @@ export const ConfigPanel = ({ visible, onClosePress }: Props) => {
       // 100% doesn't mean 100% of the box height in react native, it seems :S
       // Also, after finding the solution, remove ts-ignore statements
       // @ts-ignore
-      toValue: "-852%",
+      toValue: '-852%',
       duration: 300,
       easing: Easing.ease,
       useNativeDriver: true,
@@ -45,7 +45,7 @@ export const ConfigPanel = ({ visible, onClosePress }: Props) => {
   const slideOut = () => {
     Animated.timing(slideAnim, {
       // @ts-ignore
-      toValue: "0",
+      toValue: '0',
       duration: 150,
       useNativeDriver: true,
     }).start();
@@ -68,25 +68,25 @@ export const ConfigPanel = ({ visible, onClosePress }: Props) => {
 
 const styles = StyleSheet.create({
   container: {
-    ...flex("column", "flex-start", "center"),
+    ...flex('column', 'flex-start', 'center'),
     padding: 30,
     paddingTop: 80,
-    width: "100%",
-    height: "100%",
-    top: "100%",
-    position: "absolute",
+    width: '100%',
+    height: '100%',
+    top: '100%',
+    position: 'absolute',
     backgroundColor: Color.White,
-    border: "1px solid black",
+    border: '1px solid black',
   },
   closeButton: {
-    alignSelf: "flex-start",
+    alignSelf: 'flex-start',
     marginBottom: 20,
   },
   heading: {
     fontSize: 25,
   },
   switchGroup: {
-    ...flex("row", "flex-start", "center"),
-    width: "100%",
+    ...flex('row', 'flex-start', 'center'),
+    width: '100%',
   },
 });

@@ -1,1 +1,1 @@
-export { ConfigPanel } from "./ConfigPanel";
+export { ConfigPanel } from './ConfigPanel';

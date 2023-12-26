@@ -1,8 +1,8 @@
-import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
-import { View, StyleSheet, Pressable } from "react-native";
-import { useNavigate, useLocation } from "react-router-native";
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
+import { View, StyleSheet, Pressable } from 'react-native';
+import { useNavigate, useLocation } from 'react-router-native';
 
-import { Color } from "../../../../styles";
+import { Color } from '../../../../styles';
 
 type Props = {
   activeSessionExists: boolean;
@@ -19,31 +19,31 @@ export const Navigation = ({ activeSessionExists }: Props) => {
 
   return (
     <View style={styles.container}>
-      <Pressable onPress={() => navigate("/update-menu")}>
+      <Pressable onPress={() => navigate('/update-menu')}>
         <FontAwesome5
           name="pen"
-          style={{ ...styles.icon, ...getActiveStyling(["/update-menu"]) }}
+          style={{ ...styles.icon, ...getActiveStyling(['/update-menu']) }}
         />
       </Pressable>
       <Pressable
         onPress={() =>
-          activeSessionExists ? navigate("/active-session") : navigate("/home")
+          activeSessionExists ? navigate('/active-session') : navigate('/home')
         }
       >
         <FontAwesome5
           name="bolt"
           style={{
             ...styles.icon,
-            ...getActiveStyling(["/active-session", "/home"]),
+            ...getActiveStyling(['/active-session', '/home']),
           }}
         />
       </Pressable>
-      <Pressable onPress={() => navigate("/completed-sessions")}>
+      <Pressable onPress={() => navigate('/completed-sessions')}>
         <FontAwesome5
           name="list"
           style={{
             ...styles.icon,
-            ...getActiveStyling(["/completed-sessions"]),
+            ...getActiveStyling(['/completed-sessions']),
           }}
         />
       </Pressable>
@@ -53,9 +53,9 @@ export const Navigation = ({ activeSessionExists }: Props) => {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     paddingLeft: 40,
     paddingRight: 40,
     paddingTop: 20,

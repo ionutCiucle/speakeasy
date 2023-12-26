@@ -1,14 +1,14 @@
-import { useEffect } from "react";
-import { View, StyleSheet } from "react-native";
-import { useNavigate } from "react-router-native";
+import { useEffect } from 'react';
+import { View, StyleSheet } from 'react-native';
+import { useNavigate } from 'react-router-native';
 
 import {
   useAppDispatch,
   useAppSelector,
-} from "../../../../stateManagement/hooks";
-import { startSession } from "../../../../stateManagement/sessionSlice";
-import { Color, flex } from "../../../../styles";
-import { BigButton } from "../../components/BigButton/BigButton";
+} from '../../../../stateManagement/hooks';
+import { startSession } from '../../../../stateManagement/sessionSlice';
+import { Color, flex } from '../../../../styles';
+import { BigButton } from '../../components/BigButton/BigButton';
 
 export const Home = () => {
   const dispatch = useAppDispatch();
@@ -17,7 +17,7 @@ export const Home = () => {
 
   useEffect(() => {
     if (activeSession !== null) {
-      navigate("/active-session");
+      navigate('/active-session');
     }
   }, [activeSession]);
 
@@ -34,15 +34,15 @@ export const Home = () => {
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
-    height: "100%",
-    ...flex("row", "center", "center"),
+    width: '100%',
+    height: '100%',
+    ...flex('row', 'center', 'center'),
   },
   button: {
     padding: 10,
     borderRadius: 20,
     color: Color.RaisinBlack,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     fontSize: 30,
     backgroundColor: Color.Jonquill,
   },

@@ -1,1 +1,1 @@
-export { UpdateMenu } from "./UpdateMenu";
+export { UpdateMenu } from './UpdateMenu';

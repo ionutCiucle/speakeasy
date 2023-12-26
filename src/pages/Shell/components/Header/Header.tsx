@@ -1,7 +1,7 @@
-import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 
-import { Color } from "../../../../styles";
+import { Color } from '../../../../styles';
 
 type Props = {
   onCogPress: (...args: any) => void;
@@ -25,13 +25,13 @@ const styles = StyleSheet.create({
     paddingTop: 70,
     paddingLeft: 20,
     paddingRight: 20,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   headerText: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     color: Color.RaisinBlack,
   },
   icon: {
