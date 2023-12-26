@@ -1,16 +1,19 @@
 import { useEffect } from "react";
 import { View, StyleSheet } from "react-native";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-native";
 
+import {
+  useAppDispatch,
+  useAppSelector,
+} from "../../../../stateManagement/hooks";
 import { startSession } from "../../../../stateManagement/sessionSlice";
 import { Color, flex } from "../../../../styles";
 import { BigButton } from "../../components/BigButton/BigButton";
 
 export const Home = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const { activeSession } = useSelector((state) => state.session);
+  const { activeSession } = useAppSelector((state) => state.session);
 
   useEffect(() => {
     if (activeSession !== null) {
