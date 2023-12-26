@@ -2,36 +2,17 @@ import { createSlice } from "@reduxjs/toolkit";
 import { DrinkType, ServingType } from "./enums";
 
 const initialState = {
-  drinks: [
-    {
-      name: "Pilsner",
-      type: DrinkType.Beer,
-      servingType: ServingType.Pint,
-      price: 17,
-      count: 1,
-    },
-    {
-      name: "Hacker Pschorr",
-      type: DrinkType.Beer,
-      servingType: ServingType.Pint,
-      price: 20,
-      count: 1,
-    },
-    {
-      name: "Flat White",
-      type: DrinkType.Coffee,
-      servingType: ServingType.Cup,
-      price: 15,
-      count: 1,
-    },
-  ],
-  meals: [],
+  showConfigPanel: false,
 };
 
 const generalSlice = createSlice({
   name: "general",
   initialState,
-  reducers: {},
+  reducers: {
+    toggleConfigPanelVisibility(state) {
+      state.showConfigPanel = !state.showConfigPanel;
+    },
+  },
 });
 
 export default generalSlice.reducer;
