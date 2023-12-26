@@ -1,12 +1,11 @@
-import { StyleSheet } from "react-native";
 import { Provider } from "react-redux";
 import { NativeRouter, Routes, Route } from "react-router-native";
 import { store } from "./src/stateManagement/store";
-import { Shell } from "./src/Shell";
-import { CreateSession } from "./src/views/CreateSession";
-import { CompletedSessions } from "./src/views/CompletedSessions";
-import { UpdateMenu } from "./src/views/UpdateMenu";
-import { ActiveSession } from "./src/views/ActiveSession";
+import { Shell } from "./src/pages/Shell";
+import { CreateSession } from "./src/pages/Shell/pages/CreateSession";
+import { CompletedSessions } from "./src/pages/Shell/pages/CompletedSessions";
+import { UpdateMenu } from "./src/pages/Shell/pages/UpdateMenu";
+import { ActiveSession } from "./src/pages/Shell/pages/ActiveSession";
 
 export default function App() {
   return (

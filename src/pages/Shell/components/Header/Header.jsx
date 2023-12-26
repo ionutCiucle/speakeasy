@@ -1,17 +1,14 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Pressable } from "react-native";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
-import { Colors } from "../../../styles";
+import { Colors } from "../../../../styles";
 
-export const Header = () => {
+export const Header = ({ onCogPress }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.headerText}>Speakeasy</Text>
-      <FontAwesome5
-        name="cog"
-        size={20}
-        style={styles.icon}
-        onPress={() => console.log("Pressed the cog!")}
-      />
+      <Pressable onPress={onCogPress}>
+        <FontAwesome5 name="cog" size={20} style={styles.icon} />
+      </Pressable>
     </View>
   );
 };

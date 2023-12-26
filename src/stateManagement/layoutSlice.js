@@ -1,12 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { DrinkType, ServingType } from "./enums";
 
 const initialState = {
   showConfigPanel: false,
 };
 
-const generalSlice = createSlice({
-  name: "general",
+const layoutSlice = createSlice({
+  name: "layout",
   initialState,
   reducers: {
     toggleConfigPanelVisibility(state) {
@@ -15,4 +14,6 @@ const generalSlice = createSlice({
   },
 });
 
-export default generalSlice.reducer;
+export const { toggleConfigPanelVisibility } = layoutSlice.actions;
+
+export default layoutSlice.reducer;

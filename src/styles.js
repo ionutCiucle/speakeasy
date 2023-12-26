@@ -11,3 +11,9 @@ export const Colors = {
   Flame: `#e4572e`,
   White: "#ffffff",
 };
+
+export const flex = (flexDirection, justifyContent, alignItems) => ({
+  flexDirection,
+  justifyContent,
+  alignItems,
+});
