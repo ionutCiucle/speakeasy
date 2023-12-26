@@ -1,10 +1,52 @@
-import { View, Text, StyleSheet, Switch, Pressable } from "react-native";
+import { useRef, useEffect } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Switch,
+  Pressable,
+  Animated,
+  // Easing,
+} from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { flex } from "../../../../styles";
+import { flex, Colors } from "../../../../styles";
 
-export const ConfigPanel = ({ style = {}, onClosePress }) => {
+export const ConfigPanel = ({ visible, onClosePress }) => {
+  const slideAnim = useRef(new Animated.Value(0)).current;
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (visible) {
+      slideIn();
+    } else {
+      slideOut();
+    }
+  }, [visible]);
+
+  const slideIn = () => {
+    Animated.timing(slideAnim, {
+      // TODO: Find a way to move this exactly its height up in a way
+      // that doesn't depend on its actual height
+      // 100% doesn't mean 100% of the box height in react native, it seems :S
+      toValue: "-852%",
+      duration: 100,
+      useNativeDriver: true,
+    }).start();
+  };
+
+  const slideOut = () => {
+    Animated.timing(slideAnim, {
+      toValue: "0",
+      duration: 100,
+      useNativeDriver: true,
+    }).start();
+  };
+
   return (
-    <View style={{ ...styles.container, ...style }}>
+    <Animated.View
+      ref={containerRef}
+      style={{ ...styles.container, transform: [{ translateY: slideAnim }] }}
+    >
       <Pressable style={styles.closeButton} onPress={onClosePress}>
         <FontAwesome size={40} name="close" />
       </Pressable>
@@ -12,7 +54,7 @@ export const ConfigPanel = ({ style = {}, onClosePress }) => {
         <Text>Buzz Mode</Text>
         <Switch />
       </View>
-    </View>
+    </Animated.View>
   );
 };
 
@@ -23,6 +65,10 @@ const styles = StyleSheet.create({
     paddingTop: 80,
     width: "100%",
     height: "100%",
+    top: "100%",
+    position: "absolute",
+    backgroundColor: Colors.White,
+    border: "1px solid black",
   },
   closeButton: {
     alignSelf: "flex-start",
