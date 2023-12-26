@@ -4,34 +4,43 @@ import { useNavigate, useLocation } from "react-router-native";
 
 import { Colors } from "../../../../styles";
 
-export const Navigation = () => {
+export const Navigation = ({ activeSessionExists }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const getActiveStyling = (navButtonRoute) =>
-    location.pathname === navButtonRoute ? styles.iconActive : null;
+  const getActiveStyling = (navButtonRouteList) =>
+    navButtonRouteList.some((routeName) => location.pathname === routeName)
+      ? styles.iconActive
+      : null;
 
   return (
     <View style={styles.container}>
       <Pressable onPress={() => navigate("/update-menu")}>
         <FontAwesome5
           name="pen"
-          style={{ ...styles.icon, ...getActiveStyling("/update-menu") }}
+          style={{ ...styles.icon, ...getActiveStyling(["/update-menu"]) }}
         />
       </Pressable>
-      <Pressable onPress={() => navigate("/active-session")}>
+      <Pressable
+        onPress={() =>
+          activeSessionExists ? navigate("/active-session") : navigate("/home")
+        }
+      >
         <FontAwesome5
           name="bolt"
           style={{
             ...styles.icon,
-            ...getActiveStyling("/active-session"),
+            ...getActiveStyling(["/active-session", "/home"]),
           }}
         />
       </Pressable>
       <Pressable onPress={() => navigate("/completed-sessions")}>
         <FontAwesome5
           name="list"
-          style={{ ...styles.icon, ...getActiveStyling("/completed-sessions") }}
+          style={{
+            ...styles.icon,
+            ...getActiveStyling(["/completed-sessions"]),
+          }}
         />
       </Pressable>
     </View>
