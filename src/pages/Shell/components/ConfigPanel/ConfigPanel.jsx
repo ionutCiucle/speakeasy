@@ -6,7 +6,7 @@ import {
   Switch,
   Pressable,
   Animated,
-  // Easing,
+  Easing,
 } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { flex, Colors } from "../../../../styles";
@@ -26,10 +26,11 @@ export const ConfigPanel = ({ visible, onClosePress }) => {
   const slideIn = () => {
     Animated.timing(slideAnim, {
       // TODO: Find a way to move this exactly its height up in a way
-      // that doesn't depend on its actual height
+      // that extracts the height at runtime;
       // 100% doesn't mean 100% of the box height in react native, it seems :S
       toValue: "-852%",
-      duration: 100,
+      duration: 700,
+      easing: Easing.bounce,
       useNativeDriver: true,
     }).start();
   };
@@ -37,7 +38,7 @@ export const ConfigPanel = ({ visible, onClosePress }) => {
   const slideOut = () => {
     Animated.timing(slideAnim, {
       toValue: "0",
-      duration: 100,
+      duration: 150,
       useNativeDriver: true,
     }).start();
   };
