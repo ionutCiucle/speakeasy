@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { useNavigate } from 'react-router-native';
 
-import { useAppSelector, useAppDispatch } from '@/stateManagement/hooks';
+import { useAppDispatch, useAppSelector } from '@/stateManagement/hooks';
 import { completeSession } from '@/stateManagement/sessionSlice';
 import { flex } from '@/styles';
 import { timestampToDateString } from '@/pages/utils';

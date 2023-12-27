@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { useNavigate } from 'react-router-native';
 
 import { useAppDispatch, useAppSelector } from '@/stateManagement/hooks';

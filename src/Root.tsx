@@ -1,5 +1,5 @@
 import { Provider } from 'react-redux';
-import { NativeRouter, Routes, Route } from 'react-router-native';
+import { NativeRouter, Route, Routes } from 'react-router-native';
 
 import { Shell } from '@/pages/Shell';
 import { ActiveSession } from '@/pages/Shell/pages/ActiveSession';

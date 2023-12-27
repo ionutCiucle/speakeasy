@@ -1,6 +1,6 @@
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
-import { View, StyleSheet, Pressable } from 'react-native';
-import { useNavigate, useLocation } from 'react-router-native';
+import { Pressable, StyleSheet, View } from 'react-native';
+import { useLocation, useNavigate } from 'react-router-native';
 
 import { Color } from '@/styles';
 

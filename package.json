@@ -9,6 +9,7 @@
     "web": "expo start --web",
     "ts:check": "tsc",
     "lint:check": "eslint ./src",
+    "lint:fix": "eslint --fix ./src",
     "format": "prettier --write ."
   },
   "dependencies": {

@@ -1,4 +1,4 @@
-import { View, ScrollView, Text, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { useAppSelector } from '@/stateManagement/hooks';
 import { flex } from '@/styles';

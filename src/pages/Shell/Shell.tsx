@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { useAppSelector, useAppDispatch } from '@/stateManagement/hooks';
+import { StyleSheet, View } from 'react-native';
+import { useAppDispatch, useAppSelector } from '@/stateManagement/hooks';
 import { Outlet, useNavigate } from 'react-router-native';
 
 import { ConfigPanel } from './components/ConfigPanel';
