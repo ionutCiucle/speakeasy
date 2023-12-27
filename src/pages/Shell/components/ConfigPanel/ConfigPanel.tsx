@@ -10,7 +10,7 @@ import {
   Easing,
 } from 'react-native';
 
-import { flex, Color } from '../../../../styles';
+import { flex, Color } from '@/styles';
 
 type Props = {
   visible: boolean;
