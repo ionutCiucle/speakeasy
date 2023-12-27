@@ -1,14 +1,11 @@
 import { useEffect } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { useNavigate } from 'react-router-native';
 
-import {
-  useAppDispatch,
-  useAppSelector,
-} from '../../../../stateManagement/hooks';
-import { startSession } from '../../../../stateManagement/sessionSlice';
-import { Color, flex } from '../../../../styles';
-import { BigButton } from '../../components/BigButton/BigButton';
+import { useAppDispatch, useAppSelector } from '@/stateManagement/hooks';
+import { startSession } from '@/stateManagement/sessionSlice';
+import { Color, flex } from '@/styles';
+import { BigButton } from '@/pages/Shell/components/BigButton/BigButton';
 
 export const Home = () => {
   const dispatch = useAppDispatch();

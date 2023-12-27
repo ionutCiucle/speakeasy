@@ -1,16 +1,13 @@
 import { useEffect } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { useNavigate } from 'react-router-native';
 
-import {
-  useAppSelector,
-  useAppDispatch,
-} from '../../../../stateManagement/hooks';
-import { completeSession } from '../../../../stateManagement/sessionSlice';
-import { flex } from '../../../../styles';
-import { timestampToDateString } from '../../../utils';
-import { BigButton } from '../../components/BigButton/BigButton';
-import { PageHeading } from '../../components/PageHeading';
+import { useAppDispatch, useAppSelector } from '@/stateManagement/hooks';
+import { completeSession } from '@/stateManagement/sessionSlice';
+import { BigButton } from '@/pages/Shell/components/BigButton/BigButton';
+import { PageHeading } from '@/pages/Shell/components/PageHeading';
+import { timestampToDateString } from '@/stateManagement/utils';
+import { flex } from '@/styles';
 
 export const ActiveSession = () => {
   const dispatch = useAppDispatch();

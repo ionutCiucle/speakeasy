@@ -1,16 +1,16 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { useEffect, useRef } from 'react';
 import {
-  View,
-  Text,
-  StyleSheet,
-  Switch,
-  Pressable,
   Animated,
   Easing,
+  Pressable,
+  StyleSheet,
+  Switch,
+  Text,
+  View,
 } from 'react-native';
 
-import { flex, Color } from '../../../../styles';
+import { Color, flex } from '@/styles';
 
 type Props = {
   visible: boolean;
@@ -36,7 +36,7 @@ export const ConfigPanel = ({ visible, onClosePress }: Props) => {
       // Also, after finding the solution, remove ts-ignore statements
       // @ts-ignore
       toValue: '-852%',
-      duration: 300,
+      duration: 180,
       easing: Easing.ease,
       useNativeDriver: true,
     }).start();

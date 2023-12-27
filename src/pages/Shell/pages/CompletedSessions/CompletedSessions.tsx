@@ -1,9 +1,9 @@
-import { View, ScrollView, Text, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
-import { useAppSelector } from '../../../../stateManagement/hooks';
-import { flex } from '../../../../styles';
-import { timestampToDateString } from '../../../utils';
-import { PageHeading } from '../../components/PageHeading';
+import { useAppSelector } from '@/stateManagement/hooks';
+import { flex } from '@/styles';
+import { timestampToDateString } from '@/stateManagement/utils';
+import { PageHeading } from '@/pages/Shell/components/PageHeading';
 
 export const CompletedSessions = () => {
   const { completedSessions } = useAppSelector((state) => state.session);

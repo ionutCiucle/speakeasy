@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { useAppSelector, useAppDispatch } from '../../stateManagement/hooks';
+import { StyleSheet, View } from 'react-native';
+import { useAppDispatch, useAppSelector } from '@/stateManagement/hooks';
 import { Outlet, useNavigate } from 'react-router-native';
 
 import { ConfigPanel } from './components/ConfigPanel';
 import { Header } from './components/Header';
 import { Navigation } from './components/Navigation';
-import { toggleConfigPanelVisibility } from '../../stateManagement/layoutSlice';
-import { Color, flex } from '../../styles';
+import { toggleConfigPanelVisibility } from '@/stateManagement/layoutSlice';
+import { Color, flex } from '@/styles';
 
 export const Shell = () => {
   const dispatch = useAppDispatch();

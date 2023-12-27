@@ -1,7 +1,7 @@
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
-import { View, Text, StyleSheet, Pressable } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 
-import { Color } from '../../../../styles';
+import { Color } from '@/styles';
 
 type Props = {
   onCogPress: (...args: any) => void;
