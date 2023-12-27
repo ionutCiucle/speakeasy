@@ -36,7 +36,7 @@ export const ConfigPanel = ({ visible, onClosePress }: Props) => {
       // Also, after finding the solution, remove ts-ignore statements
       // @ts-ignore
       toValue: '-852%',
-      duration: 300,
+      duration: 180,
       easing: Easing.ease,
       useNativeDriver: true,
     }).start();
