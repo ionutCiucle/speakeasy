@@ -2,7 +2,7 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { useAppSelector } from '@/stateManagement/hooks';
 import { flex } from '@/styles';
-import { timestampToDateString } from '@/pages/utils';
+import { timestampToDateString } from '@/stateManagement/utils';
 import { PageHeading } from '@/pages/Shell/components/PageHeading';
 
 export const CompletedSessions = () => {
