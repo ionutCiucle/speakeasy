@@ -10,5 +10,21 @@ export enum ServingType {
   Pint = 'pint',
   Bottle = 'bottle',
   Glass = 'glass',
+  Shot = 'shot',
   Cup = 'cup',
+}
+
+export enum VenueType {
+  Bar = 'bar',
+  Restaurant = 'restaurant',
+  Cafe = 'cafe',
+  ConcertHall = 'concertHall',
+}
+
+export enum Rating {
+  Terrible = 1,
+  Bad = 2,
+  NotGreatNotTerrible = 3,
+  Good = 4,
+  Excellent = 5,
 }

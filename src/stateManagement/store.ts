@@ -1,14 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import layoutSlice from './layoutSlice';
-import menuSlice from './menuSlice';
+import venueState from './venueSlice';
 import sessionSlice from './sessionSlice';
 
 export const store = configureStore({
   reducer: {
     layout: layoutSlice,
     session: sessionSlice,
-    menu: menuSlice,
+    menu: venueState,
   },
   // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
