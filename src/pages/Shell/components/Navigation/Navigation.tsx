@@ -21,8 +21,8 @@ export const Navigation = ({ activeSessionExists }: Props) => {
     <View style={styles.container}>
       <AnimatedIcon
         name="pen"
-        style={{ ...styles.icon, ...getActiveStyling(['/update-menu']) }}
-        onPress={() => navigate('/update-menu')}
+        style={{ ...styles.icon, ...getActiveStyling(['/venues']) }}
+        onPress={() => navigate('/venues')}
       />
       <AnimatedIcon
         name="bolt"
