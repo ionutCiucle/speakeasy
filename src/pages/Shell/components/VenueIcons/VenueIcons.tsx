@@ -9,9 +9,10 @@ import { Color, flex } from '@/styles';
 
 type Props = {
   type: VenueType;
+  iconSize?: number;
 };
 
-export const VenueIcons = ({ type }: Props) => {
+export const VenueIcons = ({ type, iconSize = 30 }: Props) => {
   const renderIcons = () => {
     const markup = [];
 
@@ -19,13 +20,13 @@ export const VenueIcons = ({ type }: Props) => {
       case VenueType.Restaurant: {
         markup.push(
           <MaterialIcons
-            size={25}
+            size={iconSize}
             color={Color.RaisinBlack}
             key={1}
             name="restaurant"
           />,
           <MaterialIcons
-            size={25}
+            size={iconSize}
             key={2}
             color={Color.RaisinBlack}
             name="wine-bar"
@@ -35,14 +36,19 @@ export const VenueIcons = ({ type }: Props) => {
       }
       case VenueType.Cafe: {
         markup.push(
-          <Feather size={25} key={1} color={Color.RaisinBlack} name="coffee" />,
+          <Feather
+            size={iconSize}
+            key={1}
+            color={Color.RaisinBlack}
+            name="coffee"
+          />,
         );
         break;
       }
       case VenueType.Bar: {
         markup.push(
           <MaterialIcons
-            size={25}
+            size={iconSize}
             key={1}
             color={Color.RaisinBlack}
             name="local-bar"
@@ -53,7 +59,7 @@ export const VenueIcons = ({ type }: Props) => {
       case VenueType.ConcertHall: {
         markup.push(
           <MaterialIcons
-            size={25}
+            size={iconSize}
             key={1}
             color={Color.RaisinBlack}
             name="music-note"

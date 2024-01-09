@@ -14,7 +14,6 @@ export const Venues = () => {
           <View style={styles.top}>
             <Text style={styles.venueName}>{venue.name}</Text>
             <VenueIcons type={venue.type} />
-            {/* <Text style={styles.venueType}>{venue.type}</Text> */}
           </View>
           <RatingStars rating={venue.rating!} />
         </View>
