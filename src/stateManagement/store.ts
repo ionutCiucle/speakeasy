@@ -8,7 +8,7 @@ export const store = configureStore({
   reducer: {
     layout: layoutSlice,
     session: sessionSlice,
-    menu: venueState,
+    venue: venueState,
   },
   // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
