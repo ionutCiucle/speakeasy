@@ -1,8 +1,8 @@
 // import { Ionicons } from '@expo/vector-icons';
 import { View, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { FontAwesome5 } from '@expo/vector-icons';
+// import { MaterialCommunityIcons } from '@expo/vector-icons';
+// import { FontAwesome5 } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { VenueType } from '@/stateManagement/enums';
 import { Color, flex } from '@/styles';
