@@ -28,3 +28,11 @@ export enum Rating {
   Good = 4,
   Excellent = 5,
 }
+
+export enum Currency {
+  RON = 'LEI',
+  EUR = 'EUR',
+  USD = 'USD',
+  HUF = 'HUF',
+  CZC = 'CZC',
+}

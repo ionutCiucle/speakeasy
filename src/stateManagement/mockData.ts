@@ -1,10 +1,10 @@
 import { Drink, Meal, Venue } from './types';
-import { Rating, DrinkType, ServingType, VenueType } from './enums';
+import { Rating, DrinkType, ServingType, VenueType, Currency } from './enums';
 
 export const drinks: Drink[] = [
   {
     id: '1',
-    name: 'Pilsner',
+    name: 'Pilsner Urquell',
     type: DrinkType.Beer,
     servingType: ServingType.Pint,
     price: 17,
@@ -20,7 +20,7 @@ export const drinks: Drink[] = [
   },
   {
     id: '3',
-    name: 'Flat White',
+    name: 'Iulius Meinl Flat White',
     type: DrinkType.Coffee,
     servingType: ServingType.Cup,
     price: 15,
@@ -53,6 +53,7 @@ export const venues: Venue[] = [
     meals,
     type: VenueType.Bar,
     rating: Rating.Good,
+    currency: Currency.RON,
   },
   {
     id: `plani`,
@@ -61,6 +62,7 @@ export const venues: Venue[] = [
     meals: [],
     type: VenueType.Bar,
     rating: Rating.Excellent,
+    currency: Currency.RON,
   },
   {
     id: `che`,
@@ -69,6 +71,7 @@ export const venues: Venue[] = [
     meals: [],
     type: VenueType.Bar,
     rating: Rating.Terrible,
+    currency: Currency.RON,
   },
   {
     id: `tuk`,
@@ -77,6 +80,7 @@ export const venues: Venue[] = [
     meals: [],
     type: VenueType.Cafe,
     rating: Rating.Excellent,
+    currency: Currency.RON,
   },
   {
     id: `speis`,
@@ -85,6 +89,7 @@ export const venues: Venue[] = [
     meals: [],
     type: VenueType.ConcertHall,
     rating: Rating.NotGreatNotTerrible,
+    currency: Currency.RON,
   },
   {
     id: `bulgakov`,
@@ -93,6 +98,7 @@ export const venues: Venue[] = [
     meals: [],
     type: VenueType.Restaurant,
     rating: Rating.Excellent,
+    currency: Currency.RON,
   },
   {
     id: `sancho`,
@@ -101,5 +107,6 @@ export const venues: Venue[] = [
     meals: [],
     type: VenueType.Restaurant,
     rating: Rating.NotGreatNotTerrible,
+    currency: Currency.RON,
   },
 ];

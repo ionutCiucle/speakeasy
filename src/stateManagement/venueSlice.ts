@@ -20,7 +20,10 @@ const venueState = createSlice({
   name: 'venues',
   initialState,
   reducers: {
-    addNewVenue(state, action: PayloadAction<Pick<Venue, 'name' | 'type'>>) {
+    addNewVenue(
+      state,
+      action: PayloadAction<Pick<Venue, 'name' | 'type' | 'currency'>>,
+    ) {
       const id = `${action.payload.name}-${Date.now()}`;
 
       state.venues.push({

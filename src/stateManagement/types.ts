@@ -1,4 +1,4 @@
-import { ServingType, DrinkType, VenueType, Rating } from './enums';
+import { ServingType, DrinkType, VenueType, Rating, Currency } from './enums';
 
 export type Drink = {
   id: string;
@@ -23,4 +23,5 @@ export type Venue = {
   drinks: Drink[];
   meals: Meal[];
   rating: Rating | null;
+  currency: Currency;
 };
