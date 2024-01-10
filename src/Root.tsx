@@ -6,6 +6,7 @@ import { ActiveSession } from '@/pages/Shell/pages/ActiveSession';
 import { CompletedSessions } from '@/pages/Shell/pages/CompletedSessions';
 import { Home } from '@/pages/Shell/pages/Home';
 import { Venues } from '@/pages/Shell/pages/Venues';
+import { VenueOverview } from './pages/Shell/pages/VenueOverview';
 import { store } from '@/stateManagement/store';
 
 export const Root = () => {
@@ -17,6 +18,7 @@ export const Root = () => {
             <Route path="/home" element={<Home />} />
             <Route path="/active-session" element={<ActiveSession />} />
             <Route path="/venues" element={<Venues />} />
+            <Route path="/venue-overview" element={<VenueOverview />} />
             <Route path="/completed-sessions" element={<CompletedSessions />} />
           </Route>
         </Routes>

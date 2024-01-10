@@ -7,10 +7,12 @@ import { getItemById } from './utils';
 type VenueState = {
   createVenue: null;
   venues: Venue[];
+  selectedVenue: Venue | null;
 };
 
 const initialState: VenueState = {
   createVenue: null,
+  selectedVenue: null,
   venues,
 };
 
@@ -34,6 +36,16 @@ const venueState = createSlice({
         (venue) => venue.id !== action.payload,
       );
       state.venues = nextVenues;
+    },
+    selectVenue(state, action: PayloadAction<string>) {
+      const nextSelectedVenue = venues.find(
+        (venue) => venue.id === action.payload,
+      );
+
+      state.selectedVenue = nextSelectedVenue!;
+    },
+    flushSelectedVenue(state) {
+      state.selectedVenue = null;
     },
     updateVenueRating(
       state,
