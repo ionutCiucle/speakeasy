@@ -7,7 +7,7 @@ import { selectVenue } from '@/stateManagement/venueSlice';
 import { Color, flex } from '@/styles';
 // import { Venue } from '@/stateManagement/types';
 
-export const Venues = () => {
+export const VenueList = () => {
   const { venues } = useAppSelector((state) => state.venue);
   const dispatch = useAppDispatch();
   // const navigate = useNavigate();

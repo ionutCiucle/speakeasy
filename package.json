@@ -13,7 +13,6 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@expo/webpack-config": "^19.0.0",
     "@reduxjs/toolkit": "^2.0.1",
     "color": "^4.2.3",
     "expo": "~49.0.15",
@@ -29,6 +28,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@expo/webpack-config": "^19.0.0",
     "@types/react": "~18.2.14",
     "@types/react-router-native": "^6.4.0",
     "@typescript-eslint/eslint-plugin": "^6.16.0",

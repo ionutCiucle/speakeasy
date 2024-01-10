@@ -5,8 +5,11 @@ import { Shell } from '@/pages/Shell';
 import { ActiveSession } from '@/pages/Shell/pages/ActiveSession';
 import { CompletedSessions } from '@/pages/Shell/pages/CompletedSessions';
 import { Home } from '@/pages/Shell/pages/Home';
-import { Venues } from '@/pages/Shell/pages/Venues';
-import { VenueOverview } from './pages/Shell/pages/VenueOverview';
+import {
+  VenueStack,
+  VenueList,
+  VenueOverview,
+} from './pages/Shell/pages/VenueStack';
 import { store } from '@/stateManagement/store';
 
 export const Root = () => {
@@ -17,7 +20,13 @@ export const Root = () => {
           <Route path="/" element={<Shell />}>
             <Route path="/home" element={<Home />} />
             <Route path="/active-session" element={<ActiveSession />} />
-            <Route path="/venues" element={<Venues />} />
+            <Route path="/venue-stack" element={<VenueStack />}>
+              <Route path="/venue-stack/venue-list" element={<VenueList />} />
+              <Route
+                path="/venue-stack/venue-overview"
+                element={<VenueOverview />}
+              />
+            </Route>
             <Route path="/venue-overview" element={<VenueOverview />} />
             <Route path="/completed-sessions" element={<CompletedSessions />} />
           </Route>

@@ -94,6 +94,8 @@ export const {
   addDrinkToVenue,
   removeDrinkFromMenu,
   updateVenueRating,
+  selectVenue,
+  flushSelectedVenue,
 } = venueState.actions;
 
 export default venueState.reducer;
